@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Pet</title>
+    <link rel="stylesheet" href="https://www.aaha.org/wp-content/uploads/2024/04/bootstrap-custom.css">
+    <link rel="stylesheet" href="https://www.aaha.org/wp-content/uploads/2024/04/appforcms.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Poppins:700|Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://www.aaha.org/Static/js/bootstrap-vue.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script>
+        $(function () {
+            function initThisComponent() {
+                new Vue({
+                    el: "#richText"
+                });
+            }
+            document.addEventListener("DOMContentLoaded", initThisComponent, false);
+        });
+    </script>
+    <style type="text/css" id="ddi_styles">
+        .ddi_printable {
+            width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label.form-control {
+            display: unset;
+            border: none;
+        }
+
+        .form-control, .input-group-text, .dropdown-menu, .custom-select {
+            font-size: 1em;
+        }
+
+        div .checkbox, div .radio {
+            padding-bottom: 10px;
+        }
+
+        .nav-tabs .nav-item {
+            padding-bottom: 0 !important;
+        }
+
+        .nav-tabs {
+            padding-bottom: 0 !important;
+        }
+
+        input[type=checkbox], input[type=radio] {
+            margin-right: 5px;
+        }
+
+        .radio-inline {
+            padding-right: 10px;
+        }
+
+        .popover-body {
+            font-size: 1.4rem;
+        }
+
+        .btn-outline-primary {
+            color: #69045c;
+            border-color: #69045c;
+        }
+
+        .btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show > .btn-outline-primary.dropdown-toggle {
+            background-color: #69045c;
+            border-color: #69045c;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #69045c;
+            border-color: #69045c;
+        }
+
+        .btn.btn-secondary.btn-lg {
+            background-color: #69045c;
+            border-color: #69045c;
+        }
+
+        a#recFood1Info, a#recTreat1Info {
+            color: #69045c;
+        }
+
+        @media print {
+            .no_print {
+                display: none;
+            }
+
+            #weight-loss-plan-table {
+                font-size: .9em;
+            }
+
+            .h3, h3 {
+                font-size: 1.4em !important;
+            }
+
+            .ddi_printable {
+                font-size: 1.3em !important;
+                width: 1000px;
+            }
+        }
+
+        @media screen {
+            .plan-page-break {
+                border-bottom: 2px solid rgb(222, 226, 230);
+                margin-left: -30px;
+                margin-right: -30px;
+                margin-bottom: 27px;
+            }
+        }
+    </style>
+
+    <script>
+        var oldPrintWindow;
+        function GetPrintableForm() {
+            try {
+                oldPrintWindow.close();
+            } catch (e) {}
+
+            var printWindow = window.open('', 'Nutrition Plan', 'menubar=no');
+            injectGoogleFonts(printWindow);
+            injectJquery(printWindow);
+
+            var strHtmlForPopUpHead = '<meta charset="utf-8"> <title>Nutrition Plan</title> <style type="text/css"> ';
+            strHtmlForPopUpHead += $('#ddi_styles').html();
+            strHtmlForPopUpHead += ' <link rel="stylesheet" href="/wp-content/themes/aaha/_html/source/assets/styles/legacy-bootstrap-custom.css"><link rel="stylesheet" href="/wp-content/themes/aaha/_html/source/assets/styles/legacy-bootstrap-vue.css"><link rel="stylesheet" href="/wp-content/themes/aaha/_html/source/assets/styles/legacy-appforcms.css"><link rel="stylesheet" href="/wp-content/themes/aaha/_html/source/assets/styles/legacy-aaha-styles.css"> ';
+
+            var strHtmlForPopUp = '<div class="ddi_printable"> ';
+            strHtmlForPopUp += $('#cardNutritionPlan').html();
+            if (nglApp.isOverweight) {
+                strHtmlForPopUp += ' <div style="page-break-after: always;">&nbsp;</div> ';
+                strHtmlForPopUp += $('#cardWeightLossPlan').html();
+            }
+            strHtmlForPopUp += ' </div>';
+
+            printWindow.document.head.innerHTML += strHtmlForPopUpHead;
+            printWindow.document.body.innerHTML += strHtmlForPopUp;
+
+            injectPrintNow(printWindow);
+
+            printWindow.focus();
+            oldPrintWindow = printWindow;
+            return;
+        }
+
+        function injectGoogleFonts(sender) {
+            var myFontScript = document.createElement('script');
+            myFontScript.type = 'text/javascript';
+            myFontScript.innerHTML = 'WebFontConfig = { google: { families: ["Noto Sans", "Poppins:700", "Material Icons"] } }; (function (d) { var wf = d.createElement("script"), s = d.scripts[0]; wf.src = "https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"; wf.async = true; s.parentNode.insertBefore(wf, s); })(document);';
+            sender.document.head.appendChild(myFontScript);
+        }
+
+        function injectPrintNow(sender) {
+            var myPrintScript = document.createElement('script');
+            myPrintScript.type = 'text/javascript';
+            myPrintScript.innerHTML = 'setTimeout(function(){ window.print(); }, 300);';
+            sender.document.body.appendChild(myPrintScript);
+        }
+
+        function injectJquery(sender) {
+            var myJqueryScript = document.createElement('script');
+            myJqueryScript.type = 'text/javascript';
+            myJqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js';
+            sender.document.head.appendChild(myJqueryScript);
+        }
+    </script>
+    
+    <div id="richText">
+        <div class="appMain">
+            <b-container style="padding-top: 15px; padding-bottom:15px;">
+                <b-tabs content-class="mt-3" v-model="tabIndex">
+                    <b-tab title="Informações do Pet">
+                        <b-row>
+                            <b-col>
+                                <b-card title="Informações da Clínica">
+                                    <b-row>
+                                        <b-col lg="6">
+                                            <b-form-group label="Membro da Equipe:" label-for="vet-name" label-cols-md="5" label-cols-lg="4">
+                                                <b-input-group>
+                                                    <b-form-input id="vet-name" v-model="vetName"></b-form-input>
+                                                    <template #append>
+                                                        <b-form-select v-model="vetDesignation">
+                                                            <b-form-select-option value=", DVM">, DVM</b-form-select-option>
+                                                            <b-form-select-option value=", VMD">, VMD</b-form-select-option>
+                                                            <b-form-select-option value=", RVT">, RVT</b-form-select-option>
+                                                            <b-form-select-option value=", CVT">, CVT</b-form-select-option>
+                                                            <b-form-select-option value=", LVT">, LVT</b-form-select-option>
+                                                            <b-form-select-option value=" ">Outros</b-form-select-option>
+                                                        </b-form-select>
+                                                    </template>
+                                                </b-input-group>
+                                            </b-form-group>
+
+                                            <b-form-group label="Telefone:" label-for="practice-phone" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-input id="practice-phone" v-model="practicePhone" type="tel"></b-form-input>
+                                            </b-form-group>
+
+                                            <b-form-group label="Site:" label-for="practice-website" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-input id="practice-website" v-model="practiceWebsite" type="url"></b-form-input>
+                                            </b-form-group>
+
+                                            <b-form-group label="URL de Agendamento Online (Opcional):" label-for="practice-booking" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-input id="practice-booking" v-model="practiceBooking" type="url"></b-form-input>
+                                            </b-form-group>
+
+                                            <b-form-group label="E-mail (Opcional):" label-for="practice-email" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-input id="practice-email" v-model="practiceEmail" type="email"></b-form-input>
+                                            </b-form-group>
+                                        </b-col>
+                                        <b-col lg="6">
+                                            <b-form-group label="Logotipo da Clínica (Máx. 1MB)" label-for="practice-logo" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-file id="practice-logo" v-model="practiceLogo" accept="image/*"></b-form-file>
+                                            </b-form-group>
+
+                                            <b-form-group label="Nome da Clínica:" label-for="practice-name" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-input id="practice-name" v-model="practiceName"></b-form-input>
+                                            </b-form-group>
+
+                                            <b-form-group label="Endereço da Clínica:" label-for="practice-address" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-input id="practice-address" v-model="practiceAddress"></b-form-input>
+                                            </b-form-group>
+                                        </b-col>
+                                    </b-row>
+                                </b-card>
+                            </b-col>
+                        </b-row>
+                    </b-tab>
+
+                    <b-tab title="Informações do Pet">
+                        <b-row>
+                            <b-col>
+                                <b-card title="Informações do Pet">
+                                    <b-row>
+                                        <b-col md="6">
+                                            <b-form-group label="Nome do Pet:" label-for="pet-name" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-input id="pet-name" v-model="petName"></b-form-input>
+                                            </b-form-group>
+
+                                            <b-form-group label="ID de Microchip (Opcional):" label-for="pet-microchip" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-input id="pet-microchip" v-model="petMicrochip"></b-form-input>
+                                            </b-form-group>
+
+                                            <b-form-group label="Nascimento do Pet:" label-for="pet-dob" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-datepicker id="pet-dob" v-model="petDOB" :min="minPetDOB"></b-form-datepicker>
+                                            </b-form-group>
+                                        </b-col>
+                                        <b-col md="6">
+                                            <b-form-group label="Espécie do Pet:" label-for="pet-species" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-select id="pet-species" v-model="petSpecies">
+                                                    <b-form-select-option value="Cão">Cão</b-form-select-option>
+                                                    <b-form-select-option value="Gato">Gato</b-form-select-option>
+                                                    <b-form-select-option value="Outro">Outro</b-form-select-option>
+                                                </b-form-select>
+                                            </b-form-group>
+
+                                            <b-form-group label="Raça do Pet:" label-for="pet-breed" label-cols-md="5" label-cols-lg="4">
+                                                <b-form-input id="pet-breed" v-model="petBreed"></b-form-input>
+                                            </b-form-group>
+
+                                            <b-form-group label="Peso Atual (kg):" label-for="pet-weight" label-cols-md="5" label-cols-lg="4">
+                                                <b-input-group>
+                                                    <b-form-input id="pet-weight" v-model="petWeight" type="number" step="0.01"></b-form-input>
+                                                    <template #append>
+                                                        <b-input-group-text>kg</b-input-group-text>
+                                                    </template>
+                                                </b-input-group>
+                                            </b-form-group>
+                                        </b-col>
+                                    </b-row>
+                                </b-card>
+                            </b-col>
+                        </b-row>
+                    </b-tab>
+                </b-tabs>
+            </b-container>
+        </div>
+    </div>
+</body>
+
+</html>
