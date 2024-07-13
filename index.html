@@ -1,31 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<iframe id="interactive-625030" srcdoc="<html><head><script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;></script><script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js&quot;></script><script src=&quot;https://www.aaha.org/Static/js/bootstrap-vue.min.js&quot;></script><link rel=&quot;stylesheet&quot; href=&quot;https://www.aaha.org/wp-content/uploads/2024/04/bootstrap-custom.css&quot;><link rel=&quot;stylesheet&quot; href=&quot;https://www.aaha.org/wp-content/uploads/2024/04/appforcms.css&quot;><link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Noto+Sans%7CPoppins:700%7CMaterial+Icons&quot;><script src=&quot;https://www.aaha.org/wp-content/themes/fritz/assets/scripts/iframeResizerContentWindow.js&quot;></script></head><body><!-- Load polyfills to support older browsers -->
+    <script src=&quot;https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver&quot; crossorigin=&quot;anonymous&quot;></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações do Pet</title>
-    <link rel="stylesheet" href="https://www.aaha.org/wp-content/uploads/2024/04/bootstrap-custom.css">
-    <link rel="stylesheet" href="https://www.aaha.org/wp-content/uploads/2024/04/appforcms.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Poppins:700|Material+Icons">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
-    <script src="https://www.aaha.org/Static/js/bootstrap-vue.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
-</head>
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src=&quot;https://unpkg.com/vue@2.6.14/dist/vue.min.js&quot;></script>
+    <script src=&quot;https://unpkg.com/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js&quot;></script>
 
-<body>
-    <script>
-        $(function () {
-            function initThisComponent() {
-                new Vue({
-                    el: "#richText"
-                });
-            }
-            document.addEventListener("DOMContentLoaded", initThisComponent, false);
-        });
-    </script>
-    <style type="text/css" id="ddi_styles">
+
+    <script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot; type=&quot;text/javascript&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js&quot; integrity=&quot;sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot;></script>
+    <script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js&quot; integrity=&quot;sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot;></script>
+<script>
+	Jquery(function () {
+	  function initThisComponent() {
+		new Vue({
+		  el: &quot;#richText&quot;
+		});
+	  }
+	  document.addEventListener(&quot;DOMContentLoaded&quot;, initThisComponent, false);
+	})();
+  </script>
+    <style type=&quot;text/css&quot; id=&quot;ddi_styles&quot;>
+        /* Printable Form*/
         .ddi_printable {
             width: 850px;
             margin-left: auto;
@@ -84,7 +79,7 @@
             background-color: #69045c;
             border-color: #69045c;
         }
-
+        
         a#recFood1Info, a#recTreat1Info {
             color: #69045c;
         }
@@ -118,25 +113,29 @@
         }
     </style>
 
-    <script>
+    <script type=&quot;text/javascript&quot;>
         var oldPrintWindow;
         function GetPrintableForm() {
             try {
                 oldPrintWindow.close();
-            } catch (e) {}
+            } catch (e) {
+
+            }
 
             var printWindow = window.open('', 'Nutrition Plan', 'menubar=no');
+
             injectGoogleFonts(printWindow);
             injectJquery(printWindow);
 
-            var strHtmlForPopUpHead = '<meta charset="utf-8"> <title>Nutrition Plan</title> <style type="text/css"> ';
-            strHtmlForPopUpHead += $('#ddi_styles').html();
-            strHtmlForPopUpHead += ' <link rel="stylesheet" href="/wp-content/themes/aaha/_html/source/assets/styles/legacy-bootstrap-custom.css"><link rel="stylesheet" href="/wp-content/themes/aaha/_html/source/assets/styles/legacy-bootstrap-vue.css"><link rel="stylesheet" href="/wp-content/themes/aaha/_html/source/assets/styles/legacy-appforcms.css"><link rel="stylesheet" href="/wp-content/themes/aaha/_html/source/assets/styles/legacy-aaha-styles.css"> ';
+            var strHtmlForPopUpHead = '<meta charset=&quot;utf-8&quot;> <title>Nutrition Plan</title> <style type=&quot;text/css&quot;> ';
 
-            var strHtmlForPopUp = '<div class="ddi_printable"> ';
+            strHtmlForPopUpHead += $('#ddi_styles').html();
+            strHtmlForPopUpHead += ' <link rel=&quot;stylesheet&quot; href=&quot;/wp-content/themes/aaha/_html/source/assets/styles/legacy-bootstrap-custom.css&quot;><link rel=&quot;stylesheet&quot; href=&quot;/wp-content/themes/aaha/_html/source/assets/styles/legacy-bootstrap-vue.css&quot;><link rel=&quot;stylesheet&quot; href=&quot;/wp-content/themes/aaha/_html/source/assets/styles/legacy-appforcms.css&quot;><link rel=&quot;stylesheet&quot; href=&quot;/wp-content/themes/aaha/_html/source/assets/styles/legacy-aaha-styles.css&quot;> ';
+
+            var strHtmlForPopUp = '<div class=&quot;ddi_printable&quot;> ';
             strHtmlForPopUp += $('#cardNutritionPlan').html();
             if (nglApp.isOverweight) {
-                strHtmlForPopUp += ' <div style="page-break-after: always;">&nbsp;</div> ';
+                strHtmlForPopUp += ' <div style=&quot;page-break-after: always;&quot;>&amp;nbsp;</div> ';
                 strHtmlForPopUp += $('#cardWeightLossPlan').html();
             }
             strHtmlForPopUp += ' </div>';
@@ -148,141 +147,1209 @@
 
             printWindow.focus();
             oldPrintWindow = printWindow;
+
             return;
         }
 
         function injectGoogleFonts(sender) {
+            var myIFrame = sender; //document.getElementById(&quot;iframePrint&quot;);
             var myFontScript = document.createElement('script');
             myFontScript.type = 'text/javascript';
-            myFontScript.innerHTML = 'WebFontConfig = { google: { families: ["Noto Sans", "Poppins:700", "Material Icons"] } }; (function (d) { var wf = d.createElement("script"), s = d.scripts[0]; wf.src = "https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"; wf.async = true; s.parentNode.insertBefore(wf, s); })(document);';
-            sender.document.head.appendChild(myFontScript);
+            myFontScript.innerHTML = 'WebFontConfig = { google: { families: [&quot;Noto Sans&quot;, &quot;Poppins:700&quot;, &quot;Material Icons&quot;] } }; (function (d) { var wf = d.createElement(&quot;script&quot;), s = d.scripts[0]; wf.src = &quot;https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js&quot;; wf.async = true; s.parentNode.insertBefore(wf, s); })(document);';
+            myIFrame.document.head.appendChild(myFontScript);
         }
 
         function injectPrintNow(sender) {
+            var myPrintWindow = sender; //document.getElementById(&quot;iframePrint&quot;);
             var myPrintScript = document.createElement('script');
             myPrintScript.type = 'text/javascript';
             myPrintScript.innerHTML = 'setTimeout(function(){ window.print(); }, 300);';
-            sender.document.body.appendChild(myPrintScript);
+            //myPrintScript.innerHTML += 'document.onLoaded = PRINTME();';
+            myPrintWindow.document.body.appendChild(myPrintScript);
         }
 
         function injectJquery(sender) {
+            var myPrintWindowJ = sender; //document.getElementById(&quot;iframePrint&quot;);
             var myJqueryScript = document.createElement('script');
             myJqueryScript.type = 'text/javascript';
             myJqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js';
-            sender.document.head.appendChild(myJqueryScript);
+            myPrintWindowJ.document.head.appendChild(myJqueryScript);
         }
+
+
     </script>
-    
-    <div id="richText">
-        <div class="appMain">
-            <b-container style="padding-top: 15px; padding-bottom:15px;">
-                <b-tabs content-class="mt-3" v-model="tabIndex">
-                    <b-tab title="Informações do Pet">
-                        <b-row>
-                            <b-col>
-                                <b-card title="Informações da Clínica">
-                                    <b-row>
-                                        <b-col lg="6">
-                                            <b-form-group label="Membro da Equipe:" label-for="vet-name" label-cols-md="5" label-cols-lg="4">
-                                                <b-input-group>
-                                                    <b-form-input id="vet-name" v-model="vetName"></b-form-input>
-                                                    <template #append>
-                                                        <b-form-select v-model="vetDesignation">
-                                                            <b-form-select-option value=", DVM">, DVM</b-form-select-option>
-                                                            <b-form-select-option value=", VMD">, VMD</b-form-select-option>
-                                                            <b-form-select-option value=", RVT">, RVT</b-form-select-option>
-                                                            <b-form-select-option value=", CVT">, CVT</b-form-select-option>
-                                                            <b-form-select-option value=", LVT">, LVT</b-form-select-option>
-                                                            <b-form-select-option value=" ">Outros</b-form-select-option>
-                                                        </b-form-select>
-                                                    </template>
-                                                </b-input-group>
-                                            </b-form-group>
+<script>
+  $(function () {
+    function initThisComponent() {
+      new Vue({
+        el: &quot;#richText&quot;
+      });
+    }
+    document.addEventListener(&quot;DOMContentLoaded&quot;, initThisComponent, false);
+  })();
+</script>
+<div id=&quot;richText&quot;>
+    <div class=&quot;appMain&quot;>
+        <b-container style=&quot;padding-top: 15px; padding-bottom:15px;&quot;>
+            <b-tabs content-class=&quot;mt-3&quot; v-model=&quot;tabIndex&quot;>
+                <b-tab title=&quot;Pet Information&quot;>
+                    <b-row>
+                        <b-col>
+                            <b-card title=&quot;Practice Information&quot;>
+                                <b-row>
+                                    <b-col lg=&quot;6&quot;>
+                                        <b-form-group label=&quot;Practice Team Member:&quot; label-for=&quot;vet-name&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                            <b-input-group>
+                                                <b-form-input id=&quot;vet-name&quot; v-model=&quot;vetName&quot;></b-form-input>
+                                                <template #append>
+                                                    <b-form-select v-model=&quot;vetDesignation&quot;>
+                                                        <b-form-select-option value=&quot;, DVM&quot;>, DVM</b-form-select-option>
+                                                        <b-form-select-option value=&quot;, VMD&quot;>, VMD</b-form-select-option>
+                                                        <b-form-select-option value=&quot;, RVT&quot;>, RVT</b-form-select-option>
+                                                        <b-form-select-option value=&quot;, CVT&quot;>, CVT</b-form-select-option>
+                                                        <b-form-select-option value=&quot;, LVT&quot;>, LVT</b-form-select-option>
+                                                        <b-form-select-option value=&quot; &quot;>Other</b-form-select-option>
+                                                    </b-form-select>
+                                                </template>
+                                            </b-input-group>
+                                        </b-form-group>
 
-                                            <b-form-group label="Telefone:" label-for="practice-phone" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-input id="practice-phone" v-model="practicePhone" type="tel"></b-form-input>
-                                            </b-form-group>
+                                        <b-form-group label=&quot;Phone Number:&quot; label-for=&quot;practice-phone&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                            <b-form-input id=&quot;practice-phone&quot; v-model=&quot;practicePhone&quot; type=&quot;tel&quot;></b-form-input>
+                                        </b-form-group>
 
-                                            <b-form-group label="Site:" label-for="practice-website" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-input id="practice-website" v-model="practiceWebsite" type="url"></b-form-input>
-                                            </b-form-group>
+                                        <b-form-group label=&quot;Website:&quot; label-for=&quot;practice-website&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                            <b-form-input id=&quot;practice-website&quot; v-model=&quot;practiceWebsite&quot; type=&quot;url&quot;></b-form-input>
+                                        </b-form-group>
 
-                                            <b-form-group label="URL de Agendamento Online (Opcional):" label-for="practice-booking" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-input id="practice-booking" v-model="practiceBooking" type="url"></b-form-input>
-                                            </b-form-group>
+                                        <b-form-group label=&quot;Online Booking URL (Optional):&quot; label-for=&quot;practice-booking&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                            <b-form-input id=&quot;practice-booking&quot; v-model=&quot;practiceBooking&quot; type=&quot;url&quot;></b-form-input>
+                                        </b-form-group>
 
-                                            <b-form-group label="E-mail (Opcional):" label-for="practice-email" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-input id="practice-email" v-model="practiceEmail" type="email"></b-form-input>
-                                            </b-form-group>
-                                        </b-col>
-                                        <b-col lg="6">
-                                            <b-form-group label="Logotipo da Clínica (Máx. 1MB)" label-for="practice-logo" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-file id="practice-logo" v-model="practiceLogo" accept="image/*"></b-form-file>
-                                            </b-form-group>
+                                        <b-form-group label=&quot;Email Address (Optional):&quot; label-for=&quot;practice-email&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                            <b-form-input id=&quot;practice-email&quot; v-model=&quot;practiceEmail&quot; type=&quot;email&quot;></b-form-input>
+                                        </b-form-group>
 
-                                            <b-form-group label="Nome da Clínica:" label-for="practice-name" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-input id="practice-name" v-model="practiceName"></b-form-input>
-                                            </b-form-group>
+                                    </b-col>
+                                    <b-col lg=&quot;6&quot;>
 
-                                            <b-form-group label="Endereço da Clínica:" label-for="practice-address" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-input id="practice-address" v-model="practiceAddress"></b-form-input>
-                                            </b-form-group>
-                                        </b-col>
-                                    </b-row>
-                                </b-card>
-                            </b-col>
-                        </b-row>
-                    </b-tab>
+                                        <b-form-group label=&quot;Practice Logo (Optional):&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
 
-                    <b-tab title="Informações do Pet">
-                        <b-row>
-                            <b-col>
-                                <b-card title="Informações do Pet">
-                                    <b-row>
-                                        <b-col md="6">
-                                            <b-form-group label="Nome do Pet:" label-for="pet-name" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-input id="pet-name" v-model="petName"></b-form-input>
-                                            </b-form-group>
+                                            <b-img v-if=&quot;savedImage&quot; :src=&quot;savedImage&quot;></b-img>
+                                            <br v-if=&quot;savedImage&quot; />
+                                            <br v-if=&quot;savedImage&quot; />
+                                            <b-form-file v-model=&quot;oImageFile&quot;
+                                                         :state=&quot;Boolean(savedImage)&quot;
+                                                         :placeholder=&quot;Boolean(savedImage) ? 'Update saved logo...' : 'Choose your practice logo...'&quot;
+                                                         drop-placeholder=&quot;Drop file here...&quot;
+                                                         @change=&quot;resizeAndStoreImageInLocalStorage&quot;
+                                                         size=&quot;sm&quot;
+                                                         id=&quot;logoFileUpload&quot;
+                                                         accept=&quot;.jpg, .jpeg, .png, .gif&quot;></b-form-file>
+                                        </b-form-group>
+                                    </b-col>
+                                </b-row>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                    <br />
+                    <b-row>
+                        <b-col>
+                            <b-card title=&quot;Pet Information&quot; id=&quot;cardPetInfo&quot;>
+                                <b-row>
+                                    <b-col lg=&quot;12&quot; xl=&quot;8&quot;>
+                                        <b-form-group label=&quot;Pet's Name:&quot; label-for=&quot;pets-name&quot; label-cols-md=&quot;6&quot; label-cols-lg=&quot;5&quot;>
+                                            <b-form-input id=&quot;pets-name&quot; v-model=&quot;petsName&quot;></b-form-input>
+                                        </b-form-group>
 
-                                            <b-form-group label="ID de Microchip (Opcional):" label-for="pet-microchip" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-input id="pet-microchip" v-model="petMicrochip"></b-form-input>
-                                            </b-form-group>
+                                        <b-form-group label=&quot;Select Species:&quot; v-slot=&quot;{ ariaDescribedby }&quot; label-cols-md=&quot;6&quot; label-cols-lg=&quot;5&quot;>
+                                            <b-form-radio-group id=&quot;radio-species&quot;
+                                                                v-model=&quot;species&quot;
+                                                                :aria-describedby=&quot;ariaDescribedby&quot;
+                                                                name=&quot;radio-species&quot;
+                                                                button-variant=&quot;outline-primary&quot;
+                                                                size=&quot;lg&quot;
+                                                                buttons>
+                                                <b-form-radio value=&quot;Cat&quot;>Cat</b-form-radio>
+                                                <b-form-radio value=&quot;Dog&quot;>Dog</b-form-radio>
+                                            </b-form-radio-group>
+                                        </b-form-group>
+                                        <b-form-group label=&quot;Current Weight:&quot; label-cols-md=&quot;6&quot; label-cols-lg=&quot;5&quot;>
+                                            <b-row>
+                                                <b-col>
+                                                    <b-input-group append=&quot;kg&quot;>
+                                                        <b-form-input id=&quot;current-weight-kg&quot; @input=&quot;updateCurrentWeightFromKG&quot; v-model=&quot;currentWeightKg&quot; type=&quot;number&quot;></b-form-input>
+                                                    </b-input-group>
+                                                </b-col>
+                                                <b-col cols=&quot;auto&quot; style=&quot;align-self:center;&quot;>
+                                                    OR
+                                                </b-col>
+                                                <b-col>
+                                                    <b-input-group append=&quot;lbs&quot;>
+                                                        <b-form-input id=&quot;current-weight&quot; @input=&quot;updateCurrentWeightFromLBS&quot; v-model=&quot;currentWeight&quot; type=&quot;number&quot;></b-form-input>
+                                                    </b-input-group>
+                                                </b-col>
+                                            </b-row>
+                                        </b-form-group>
+                                        <b-form-group label=&quot;Body Condition Score:&quot; v-slot=&quot;{ ariaDescribedby }&quot; label-cols-md=&quot;6&quot; label-cols-lg=&quot;5&quot;>
+                                            <b-form-radio-group id=&quot;radio-body-condition-score&quot;
+                                                                v-model=&quot;bodyConditionScore&quot;
+                                                                :aria-describedby=&quot;ariaDescribedby&quot;
+                                                                name=&quot;radio-bcs&quot;
+                                                                button-variant=&quot;outline-primary&quot;
+                                                                size=&quot;lg&quot;
+                                                                buttons>
+                                                <b-form-radio value=1>1</b-form-radio>
+                                                <b-form-radio value=2>2</b-form-radio>
+                                                <b-form-radio value=3>3</b-form-radio>
+                                                <b-form-radio value=4>4</b-form-radio>
+                                                <b-form-radio value=5>5</b-form-radio>
+                                                <b-form-radio value=6>6</b-form-radio>
+                                                <b-form-radio value=7>7</b-form-radio>
+                                                <b-form-radio value=8>8</b-form-radio>
+                                                <b-form-radio value=9>9</b-form-radio>
+                                            </b-form-radio-group>
+                                        </b-form-group>
+                                        <b-form-group v-slot=&quot;{ ariaDescribedby }&quot; label-cols-md=&quot;6&quot; label-cols-lg=&quot;5&quot;>
+                                            <template v-slot:label>
+                                                Is Pet Overweight?:
+                                                <div class=&quot;d-inline-flex&quot; style=&quot;vertical-align:top;&quot;>
+                                                    <b-link id=&quot;isOverweightInfo&quot; title=&quot;Overweight is defined as 10% above ideal body weight or &amp;gt;/= BCS 6/9.&quot;>
+                                                        <i class=&quot;material-icons&quot;>info</i>
+                                                    </b-link>
+                                                </div>
+                                            </template>
+                                            <b-popover target=&quot;isOverweightInfo&quot; triggers=&quot;hover focus&quot; placement=&quot;right&quot; boundary=&quot;viewport&quot;>
+                                                Overweight is defined as 10% above ideal body weight or &amp;gt;/= BCS 6/9.
+                                            </b-popover>
+                                            <b-form-radio-group id=&quot;radio-overweight&quot;
+                                                                v-model=&quot;isOverweight&quot;
+                                                                :aria-describedby=&quot;ariaDescribedby&quot;
+                                                                name=&quot;radio-overweight&quot;
+                                                                button-variant=&quot;outline-primary&quot;
+                                                                size=&quot;lg&quot;
+                                                                buttons>
+                                                <b-form-radio value=&quot;true&quot;>Yes</b-form-radio>
+                                                <b-form-radio value=&quot;&quot;>No</b-form-radio>
+                                            </b-form-radio-group>
+                                        </b-form-group>
+                                        <b-alert show variant=&quot;warning&quot; v-if=&quot;Boolean(isOverweight) &amp;&amp; (!Boolean(species) || !Boolean(currentWeight))&quot;>To generate a weight loss plan you must enter the pet’s species and current weight above.</b-alert>
+                                    </b-col>
+                                </b-row>
+                                <b-row v-if=&quot;isOverweight&quot;>
+                                    <b-col xl=&quot;8&quot; lg=&quot;12&quot;>
+                                        <b-form-group label=&quot;Ideal Weight:&quot; label-cols-md=&quot;6&quot; label-cols-lg=&quot;5&quot;>
 
-                                            <b-form-group label="Nascimento do Pet:" label-for="pet-dob" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-datepicker id="pet-dob" v-model="petDOB" :min="minPetDOB"></b-form-datepicker>
-                                            </b-form-group>
-                                        </b-col>
-                                        <b-col md="6">
-                                            <b-form-group label="Espécie do Pet:" label-for="pet-species" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-select id="pet-species" v-model="petSpecies">
-                                                    <b-form-select-option value="Cão">Cão</b-form-select-option>
-                                                    <b-form-select-option value="Gato">Gato</b-form-select-option>
-                                                    <b-form-select-option value="Outro">Outro</b-form-select-option>
+                                            <b-row>
+                                                <b-col>
+                                                    <b-input-group append=&quot;kg&quot;>
+                                                        <b-form-input id=&quot;ideal-weight-kg&quot; v-model=&quot;idealWeightKg&quot; @input=&quot;updateIdealWeightFromKG&quot; type=&quot;number&quot;></b-form-input>
+                                                    </b-input-group>
+                                                </b-col>
+                                                <b-col cols=&quot;auto&quot; style=&quot;align-self:center;&quot;>
+                                                    OR
+                                                </b-col>
+                                                <b-col>
+                                                    <b-input-group append=&quot;lbs&quot;>
+                                                        <b-form-input id=&quot;ideal-weight&quot; v-model=&quot;idealWeight&quot; @input=&quot;updateIdealWeightFromLBS&quot; type=&quot;number&quot;></b-form-input>
+                                                    </b-input-group>
+                                                </b-col>
+                                            </b-row>
+                                        </b-form-group>
+                                    </b-col>
+                                </b-row>
+                                <b-row v-if=&quot;isOverweight&quot;>
+                                    <b-col xl=&quot;6&quot; lg=&quot;12&quot;>
+                                        <b-form-group label=&quot;Plan Start Date:&quot; label-for=&quot;plan-start-date&quot; label-cols-md=&quot;6&quot; label-cols-lg=&quot;5&quot;>
+                                            <b-form-datepicker id=&quot;plan-start-date&quot; v-model=&quot;planStartDate&quot; class=&quot;mb-2&quot; boundary=&quot;viewport&quot; value-as-date=&quot;true&quot; :date-format-options=&quot;{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }&quot;></b-form-datepicker>
+                                        </b-form-group>
+                                    </b-col>
+                                    <b-col xl=&quot;6&quot; lg=&quot;12&quot;>
+                                        <b-form-group label=&quot;Next Reweigh Date:&quot; label-for=&quot;reweigh-date&quot; label-cols-md=&quot;6&quot; label-cols-lg=&quot;5&quot;>
+                                            <b-form-datepicker id=&quot;reweigh-date&quot; v-model=&quot;reweighDate&quot; class=&quot;mb-2&quot; boundary=&quot;viewport&quot; value-as-date=&quot;true&quot; :date-format-options=&quot;{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }&quot;></b-form-datepicker>
+                                        </b-form-group>
+                                    </b-col>
+                                </b-row>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                    <br />
+                    <b-row>
+                        <b-col>
+                            <b-card title=&quot;Your Pet's Individual Nutrition Requirements&quot;>
+                                <p v-if=&quot;!species&quot;>Please select the species to see calculations.</p>
+                                <p v-if=&quot;!currentWeightKg&quot;>Please enter the current weight to see calculations.</p>
+                                <p v-if=&quot;isOverweight &amp;&amp; !idealWeightKg&quot;>Please enter the ideal weight to see calculations.</p>
+                                <b-row v-if=&quot;species &amp;&amp; currentWeightKg &amp;&amp; (!isOverweight || (isOverweight &amp;&amp; idealWeightKg))&quot;>
+                                    <b-col lg=&quot;6&quot;>
+                                        <b-card v-if=&quot;!isOverweight&quot; title=&quot;Resting Energy Requirement (RER)&quot;>
+                                            <p>Input: Body Weight (BW) = {{currentWeightKg}} kg</p>
+                                            <p>Formula: BW<sub> kg</sub><sup>0.75</sup> x 70 = RER</p>
+                                            <p>Resting Energy Requirement: {{currentWeightKg}}<sub>kg</sub><sup>0.75</sup> x 70 = <strong>{{restingEnergyRequirement}} kcals</strong></p>
+                                        </b-card>
+                                        <b-card v-if=&quot;isOverweight&quot; title=&quot;Resting Energy Requirement (RER)&quot;>
+                                            <p>Input: Ideal Body Weight (IBW) = {{idealWeightKg}} kg</p>
+                                            <p>Formula: IBW<sub> kg</sub><sup>0.75</sup> x 70 = RER</p>
+                                            <p>Resting Energy Requirement: {{idealWeightKg}}<sub>kg</sub><sup>0.75</sup> x 70 = <strong>{{restingEnergyRequirement}} kcals</strong></p>
+                                        </b-card>
+                                    </b-col>
+                                    <b-col lg=&quot;6&quot;>
+                                        <b-card title=&quot;Maintenance Energy Requirement (MER)&quot;>
+                                            <b-form-group label=&quot;Life stage factor:&quot; v-slot=&quot;{ ariaDescribedby }&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                <b-form-select v-model=&quot;lifeStageFactorSelected&quot; :options=&quot;lifeStageFactorOptions&quot;>
+
                                                 </b-form-select>
                                             </b-form-group>
+                                            <p>Formula: RER x life stage factor = MER</p>
+                                            <p v-if=&quot;lifeStageFactorSelected&quot;>Maintenance Energy Requirement: {{restingEnergyRequirement}} kcals x {{selectedLifeStageFactorRange}} = <strong>{{maintenanceEnergyRequirementRange}} kcals</strong></p>
+                                            <p v-if=&quot;maintenanceEnergyRequirementLow &amp;&amp; maintenanceEnergyRequirementHigh &amp;&amp; maintenanceEnergyRequirementHigh !== maintenanceEnergyRequirementLow&quot;>
+                                                <label for=&quot;rangeSelectMER&quot;>Adjust Maintenance Energy Requirement Within Range:</label>
+                                                <b-form-input id=&quot;rangeSelectMER&quot; v-model=&quot;maintenanceEnergyRequirementKcalsSelected&quot; type=&quot;range&quot; :min=&quot;maintenanceEnergyRequirementLow&quot; :max=&quot;maintenanceEnergyRequirementHigh&quot;></b-form-input>
+                                                <b-row>
+                                                    <b-col cols=&quot;auto&quot; style=&quot;text-align:center;&quot;>
+                                                        Min<br />
+                                                        {{maintenanceEnergyRequirementLow}} kcal
+                                                    </b-col>
+                                                    <b-col style=&quot;text-align:center;&quot;>
+                                                        Display to pet owner<br />
+                                                        <strong>{{ maintenanceEnergyRequirementKcalsSelected }}kcal</strong>
+                                                    </b-col>
+                                                    <b-col cols=&quot;auto&quot; style=&quot;text-align:center;&quot;>
+                                                        Max<br />
+                                                        {{maintenanceEnergyRequirementHigh}}kcal
+                                                    </b-col>
+                                                </b-row>
+                                            </p>
+                                        </b-card>
+                                    </b-col>
+                                </b-row>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                    <br />
+                    <b-row>
+                        <b-col>
+                            <b-card title=&quot;Recommended Nutrition&quot;>
+                                <b-row>
+                                    <b-col lg=&quot;6&quot;>
+                                        <b-row>
+                                            <b-col lg=&quot;12&quot;>
+                                                <b-card title=&quot;Food&quot;>
+                                                    <b-form-group label=&quot;Food Name:&quot; label-for=&quot;rec-food&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-input-group>
+                                                            <b-form-input id=&quot;rec-food&quot; v-model=&quot;recFood&quot;></b-form-input>
+                                                            <b-input-group-append>
+                                                                <b-form-radio-group id=&quot;radio-food-wetdry&quot;
+                                                                                    v-model=&quot;recFoodWetDry&quot;
+                                                                                    name=&quot;radio-food-wetdry&quot;
+                                                                                    button-variant=&quot;outline-primary&quot;
+                                                                                    size=&quot;lg&quot;
+                                                                                    buttons>
+                                                                    <b-form-radio value=&quot;Wet&quot;>Wet</b-form-radio>
+                                                                    <b-form-radio value=&quot;Dry&quot;>Dry</b-form-radio>
+                                                                </b-form-radio-group>
+                                                            </b-input-group-append>
+                                                        </b-input-group>
+                                                    </b-form-group>
+                                                    <b-form-group label=&quot;Amount:&quot; label-for=&quot;rec-food-amount&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-input-group>
+                                                            <b-form-input id=&quot;rec-food-amount&quot; v-model=&quot;recFoodAmount&quot;></b-form-input>
+                                                            <template #append>
+                                                                <b-form-select v-model=&quot;recFoodAmountUnits&quot;>
+                                                                    <b-form-select-option value=&quot;Cup(s)&quot;>Cup(s)</b-form-select-option>
+                                                                    <b-form-select-option value=&quot;Oz(s)&quot;>Oz(s)</b-form-select-option>
+                                                                    <b-form-select-option value=&quot;Can(s)&quot;>Can(s)</b-form-select-option>
+                                                                </b-form-select>
+                                                            </template>
+                                                        </b-input-group>
+                                                    </b-form-group>
+                                                    <b-form-group label=&quot;Frequency:&quot; label-for=&quot;rec-food-freq&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-form-input id=&quot;rec-food-freq&quot; v-model=&quot;recFoodFreq&quot; list=&quot;rec-food-freq-dl&quot;></b-form-input>
+                                                        <datalist id=&quot;rec-food-freq-dl&quot;>
+                                                            <option>Once a day</option>
+                                                            <option>Twice a day</option>
+                                                            <option>Three times a day</option>
+                                                        </datalist>
+                                                    </b-form-group>
+                                                    <b-form-group label-for=&quot;rec-food-link&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <template v-slot:label>
+                                                            Web Link (optional):
+                                                            <div class=&quot;d-inline-flex&quot; style=&quot;vertical-align:top;&quot;>
+                                                                <b-link id=&quot;recFood1Info&quot;>
+                                                                    <i class=&quot;material-icons&quot;>info</i>
+                                                                </b-link>
+                                                            </div>
+                                                        </template>
+                                                        <b-popover target=&quot;recFood1Info&quot; triggers=&quot;hover focus&quot; placement=&quot;right&quot; boundary=&quot;viewport&quot;>
+                                                            Copy and paste the link to this food from your practice&amp;rsquo;s online store to order, or from the manufacturer&amp;rsquo;s website for more information on the diet.
+                                                        </b-popover>
+                                                        <b-form-input id=&quot;rec-food-link&quot; v-model=&quot;recFoodLink&quot; type=&quot;url&quot;></b-form-input>
+                                                    </b-form-group>
+                                                    <div style=&quot;text-align: right;&quot; v-if=&quot;!showRecFood2&quot;>
+                                                        <b-button size=&quot;lg&quot; @click=&quot;showRecFood2 = true;&quot;>+ Add Additional Food</b-button>
+                                                    </div>
+                                                </b-card>
+                                            </b-col>
+                                            <b-col lg=&quot;12&quot;>
+                                                <b-card v-if=&quot;showRecFood2&quot;>
+                                                    <b-card-title>
+                                                        <b-row>
+                                                            <b-col cols=&quot;auto&quot; class=&quot;mr-auto&quot;>
+                                                                Additional Food
+                                                            </b-col>
+                                                            <b-col cols=&quot;auto&quot; style=&quot;text-align:right;&quot;>
+                                                                <b-button @click=&quot;showRecFood2 = false;&quot; title=&quot;Remove additional food section.&quot;>X</b-button>
+                                                            </b-col>
+                                                        </b-row>
+                                                    </b-card-title>
+                                                    <b-form-group label=&quot;Food Name:&quot; label-for=&quot;rec-food2&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-input-group>
+                                                            <b-form-input id=&quot;rec-food2&quot; v-model=&quot;recFood2&quot;></b-form-input>
+                                                            <b-input-group-append>
+                                                                <b-form-radio-group id=&quot;radio-food-wetdry2&quot;
+                                                                                    v-model=&quot;recFoodWetDry2&quot;
+                                                                                    name=&quot;radio-food-wetdry2&quot;
+                                                                                    button-variant=&quot;outline-primary&quot;
+                                                                                    size=&quot;lg&quot;
+                                                                                    buttons>
+                                                                    <b-form-radio value=&quot;Wet&quot;>Wet</b-form-radio>
+                                                                    <b-form-radio value=&quot;Dry&quot;>Dry</b-form-radio>
+                                                                </b-form-radio-group>
+                                                            </b-input-group-append>
+                                                        </b-input-group>
+                                                    </b-form-group>
+                                                    <b-form-group label=&quot;Amount:&quot; label-for=&quot;rec-food-amount2&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-input-group>
+                                                            <b-form-input id=&quot;rec-food-amount2&quot; v-model=&quot;recFoodAmount2&quot;></b-form-input>
+                                                            <template #append>
+                                                                <b-form-select v-model=&quot;recFoodAmountUnits2&quot;>
+                                                                    <b-form-select-option value=&quot;Cup(s)&quot;>Cup(s)</b-form-select-option>
+                                                                    <b-form-select-option value=&quot;Oz(s)&quot;>Oz(s)</b-form-select-option>
+                                                                    <b-form-select-option value=&quot;Can(s)&quot;>Can(s)</b-form-select-option>
+                                                                </b-form-select>
+                                                            </template>
+                                                        </b-input-group>
+                                                    </b-form-group>
+                                                    <b-form-group label=&quot;Frequency:&quot; label-for=&quot;rec-food-freq2&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-form-input id=&quot;rec-food-freq2&quot; v-model=&quot;recFoodFreq2&quot; list=&quot;rec-food-freq-dl&quot;></b-form-input>
+                                                    </b-form-group>
+                                                    <b-form-group label-for=&quot;rec-food-link2&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <template v-slot:label>
+                                                            Web Link (optional):
+                                                            <div class=&quot;d-inline-flex&quot; style=&quot;vertical-align:top;&quot;>
+                                                                <b-link id=&quot;recFood2Info&quot;>
+                                                                    <i class=&quot;material-icons&quot;>info</i>
+                                                                </b-link>
+                                                            </div>
+                                                        </template>
+                                                        <b-popover target=&quot;recFood2Info&quot; triggers=&quot;hover focus&quot; placement=&quot;right&quot; boundary=&quot;viewport&quot;>
+                                                            Copy and paste the link to this food from your practice&amp;rsquo;s online store to order, or from the manufacturer&amp;rsquo;s website for more information on the diet.
+                                                        </b-popover>
+                                                        <b-form-input id=&quot;rec-food-link2&quot; v-model=&quot;recFoodLink2&quot; type=&quot;url&quot;></b-form-input>
+                                                    </b-form-group>
+                                                </b-card>
+                                            </b-col>
+                                        </b-row>
+                                    </b-col>
 
-                                            <b-form-group label="Raça do Pet:" label-for="pet-breed" label-cols-md="5" label-cols-lg="4">
-                                                <b-form-input id="pet-breed" v-model="petBreed"></b-form-input>
-                                            </b-form-group>
+                                    <b-col lg=&quot;6&quot;>
+                                        <b-row>
+                                            <b-col lg=&quot;12&quot;>
+                                                <b-card title=&quot;Treats&quot;>
+                                                    <b-form-group label=&quot;Treat Name:&quot; label-for=&quot;rec-treat&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-form-input id=&quot;rec-treat&quot; v-model=&quot;recTreat&quot;></b-form-input>
+                                                    </b-form-group>
+                                                    <b-form-group label=&quot;Amount:&quot; label-for=&quot;rec-treat-amount&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-form-input id=&quot;rec-treat-amount&quot; v-model=&quot;recTreatAmount&quot;></b-form-input>
+                                                    </b-form-group>
+                                                    <b-form-group label=&quot;Frequency:&quot; label-for=&quot;rec-treat-freq&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-form-input id=&quot;rec-treat-freq&quot; v-model=&quot;recTreatFreq&quot; list=&quot;rec-food-freq-dl&quot;></b-form-input>
+                                                    </b-form-group>
+                                                    <b-form-group label-for=&quot;rec-treat-link&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <template v-slot:label>
+                                                            Web Link (optional):
+                                                            <div class=&quot;d-inline-flex&quot; style=&quot;vertical-align:top;&quot;>
+                                                                <b-link id=&quot;recTreat1Info&quot;>
+                                                                    <i class=&quot;material-icons&quot;>info</i>
+                                                                </b-link>
+                                                            </div>
+                                                        </template>
+                                                        <b-popover target=&quot;recTreat1Info&quot; triggers=&quot;hover focus&quot; placement=&quot;right&quot; boundary=&quot;viewport&quot;>
+                                                            Copy and paste the link to this treat from your practice&amp;rsquo;s online store to order, or from the manufacturer&amp;rsquo;s website for more information on the diet.
+                                                        </b-popover>
+                                                        <b-form-input id=&quot;rec-treat-link&quot; v-model=&quot;recTreatLink&quot; type=&quot;url&quot;></b-form-input>
+                                                    </b-form-group>
+                                                    <div style=&quot;text-align: right;&quot; v-if=&quot;!showRecTreat2&quot;>
+                                                        <b-button size=&quot;lg&quot; @click=&quot;showRecTreat2 = true;&quot;>+ Add Additional Treat</b-button>
+                                                    </div>
+                                                </b-card>
+                                            </b-col>
+                                            <b-col lg=&quot;12&quot;>
+                                                <b-card v-if=&quot;showRecTreat2&quot;>
+                                                    <b-card-title>
+                                                        <b-row>
+                                                            <b-col cols=&quot;auto&quot; class=&quot;mr-auto&quot;>
+                                                                Additional Treats
+                                                            </b-col>
+                                                            <b-col cols=&quot;auto&quot; style=&quot;text-align:right;&quot;>
+                                                                <b-button @click=&quot;showRecTreat2 = false;&quot; title=&quot;Remove additional treats section.&quot;>X</b-button>
+                                                            </b-col>
+                                                        </b-row>
+                                                    </b-card-title>
+                                                    <b-form-group label=&quot;Treat Name:&quot; label-for=&quot;rec-treat2&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-form-input id=&quot;rec-treat2&quot; v-model=&quot;recTreat2&quot;></b-form-input>
+                                                    </b-form-group>
+                                                    <b-form-group label=&quot;Amount:&quot; label-for=&quot;rec-treat-amount2&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-form-input id=&quot;rec-treat-amount2&quot; v-model=&quot;recTreatAmount2&quot;></b-form-input>
+                                                    </b-form-group>
+                                                    <b-form-group label=&quot;Frequency:&quot; label-for=&quot;rec-treat-freq2&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <b-form-input id=&quot;rec-treat-freq2&quot; v-model=&quot;recTreatFreq2&quot; list=&quot;rec-food-freq-dl&quot;></b-form-input>
+                                                    </b-form-group>
+                                                    <b-form-group label-for=&quot;rec-treat-link2&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                                        <template v-slot:label>
+                                                            Web Link (optional):
+                                                            <div class=&quot;d-inline-flex&quot; style=&quot;vertical-align:top;&quot;>
+                                                                <b-link id=&quot;recTreat2Info&quot;>
+                                                                    <i class=&quot;material-icons&quot;>info</i>
+                                                                </b-link>
+                                                            </div>
+                                                        </template>
+                                                        <b-popover target=&quot;recTreat2Info&quot; triggers=&quot;hover focus&quot; placement=&quot;right&quot; boundary=&quot;viewport&quot;>
+                                                            Copy and paste the link to this treat from your practice&amp;rsquo;s online store to order, or from the manufacturer&amp;rsquo;s website for more information on the diet.
+                                                        </b-popover>
+                                                        <b-form-input id=&quot;rec-treat-link2&quot; v-model=&quot;recTreatLink2&quot; type=&quot;url&quot;></b-form-input>
+                                                    </b-form-group>
+                                                </b-card>
+                                            </b-col>
+                                        </b-row>
+                                    </b-col>
+                                </b-row>
+                                <b-row class=&quot;mt-3&quot;>
+                                    <b-col>
+                                        <b-form-group label=&quot;Additional Nutrition Notes (Optional):&quot; label-for=&quot;recommended-nutrition-notes&quot; label-cols-md=&quot;5&quot; label-cols-lg=&quot;4&quot;>
+                                            <b-form-textarea id=&quot;recommended-nutrition-notes&quot; rows=&quot;3&quot; v-model=&quot;recommendedNutritionNotes&quot;></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
+                                </b-row>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                    <b-row>
+                        <b-col style=&quot;text-align:right;&quot; class=&quot;mt-4&quot;>
+                            <b-button size=&quot;lg&quot; @click=&quot;tabIndex++&quot;>Next -&amp;gt;</b-button>
+                        </b-col>
+                    </b-row>
+                </b-tab>
 
-                                            <b-form-group label="Peso Atual (kg):" label-for="pet-weight" label-cols-md="5" label-cols-lg="4">
-                                                <b-input-group>
-                                                    <b-form-input id="pet-weight" v-model="petWeight" type="number" step="0.01"></b-form-input>
-                                                    <template #append>
-                                                        <b-input-group-text>kg</b-input-group-text>
-                                                    </template>
-                                                </b-input-group>
-                                            </b-form-group>
-                                        </b-col>
-                                    </b-row>
-                                </b-card>
+                <b-tab title=&quot;Nutrition Prescription&quot;>
+                    <b-row>
+                        <b-col style=&quot;text-align:left;&quot; class=&quot;mt-4&quot;>
+                            <b-button size=&quot;lg&quot; @click=&quot;tabIndex--&quot;>&amp;lt;- Back</b-button>
+                        </b-col>
+                        <b-col style=&quot;text-align:right;&quot; class=&quot;mt-4&quot;>
+                            <b-button size=&quot;lg&quot; @click=&quot;tabIndex++&quot;>Next -&amp;gt;</b-button>
+                        </b-col>
+                    </b-row>
+                    <b-card id=&quot;cardNutritionPlan&quot; style=&quot;max-width:850px; margin-right:auto; margin-left:auto;&quot;>
+                        <b-row>
+                            <b-col v-if=&quot;savedImage&quot; cols=&quot;auto&quot; align-self=&quot;center&quot;>
+                                <b-img v-if=&quot;savedImage&quot; :src=&quot;savedImage&quot; style=&quot;max-width:100px;&quot;></b-img>
+                            </b-col>
+                            <b-col>
+                                <h2><span v-if=&quot;petsName&quot;>{{petsName}}'s </span>Nutrition Prescription</h2>
+                                <div>
+                                    Generated for you by your veterinary team member in conjunction with the <em>2021 AAHA Nutrition and Weight Management Guidelines for Dogs and Cats</em>.
+                                </div>
                             </b-col>
                         </b-row>
-                    </b-tab>
-                </b-tabs>
-            </b-container>
-        </div>
-    </div>
-</body>
+                        <br />
+                        <br />
+                        <b-row>
+                            <b-col>
+                                <h3>{{petsName}}</h3>
+                                <p>
+                                    Today's Date: {{todaysDate.toLocaleDateString()}}<br />
+                                    <span v-if=&quot;currentWeight&quot;><span v-if=&quot;petsName&quot;>{{petsName}}'s </span>Weight Today: {{currentWeight}} lbs<br /></span>
+                                    <span v-if=&quot;bodyConditionScore&quot;><span v-if=&quot;petsName&quot;>{{petsName}}'s </span>Body Condition Score: {{bodyConditionScore}} on a scale of 1 to 9</span>
+                                </p>
+                            </b-col>
+                        </b-row>
+                        <b-row v-if=&quot;Boolean(species) &amp;&amp; Boolean(currentWeight)&quot;>
+                            <b-col>
+                                <h3>Your Pet's Individual Nutrition Requirements</h3>
+                                <span v-if=&quot;lifeStageFactorSelected&quot;><span v-if=&quot;petsName&quot;>{{petsName}}'s </span>Life Stage Factor: {{lifeStageFactorSelected ? lifeStageFactorSelected.text : '(Not Selected)'}}<br /></span>
+                                <span v-if=&quot;petsName&quot;>{{petsName}}'s </span>Resting Energy Requirement (RER): {{restingEnergyRequirement}} kcal/day<br />
+                                <span v-if=&quot;lifeStageFactorSelected&quot;><span v-if=&quot;petsName&quot;>{{petsName}}'s </span>Maintenance Energy Requirement (MER): {{maintenanceEnergyRequirementKcalsSelected}} kcal/day</span>
+                            </b-col>
+                        </b-row>
+                        <br />
 
-</html>
+                        <h3 v-if=&quot;recFood&quot;>Recommended Nutrition</h3>
+                        <b-row :class=&quot;Boolean(recFood) ? 'd-flex mb-4' : 'd-none mb-4'&quot;>
+                            <b-col>
+                                <div>
+                                    Food: {{recFood}} <span v-if=&quot;recFoodWetDry&quot;>({{recFoodWetDry}})</span><br />
+                                    <span v-if=&quot;recFoodAmount&quot;>Amount: {{recFoodAmount}} {{recFoodAmountUnits}}<br /></span>
+                                    <span v-if=&quot;recFoodFreq&quot;>Frequency: {{recFoodFreq}}</span>
+                                </div>
+                                <b-row :class=&quot;Boolean(recFoodLink) ? 'd-flex' : 'd-none'&quot;>
+                                    <b-col align-self=&quot;center&quot;>
+                                        <a :href=&quot;recFoodLinkHttp&quot; target=&quot;_blank&quot;>More about your pet's food online</a>
+                                    </b-col>
+                                    <b-col>
+                                        <div id=&quot;recFoodQRCode&quot; class=&quot;p-2&quot;>
+
+                                        </div>
+                                    </b-col>
+                                </b-row>
+                            </b-col>
+                            <b-col :class=&quot;(Boolean(showRecFood2) &amp;&amp; Boolean(recFood2)) ? 'd-block' : 'd-none'&quot;>
+                                <div>
+                                    Food: {{recFood2}} <span v-if=&quot;recFoodWetDry2&quot;>({{recFoodWetDry2}})</span><br />
+                                    <span v-if=&quot;recFoodAmount2&quot;>Amount: {{recFoodAmount2}} {{recFoodAmountUnits2}}<br /></span>
+                                    <span v-if=&quot;recFoodFreq2&quot;>Frequency: {{recFoodFreq2}}</span>
+                                </div>
+                                <b-row :class=&quot;Boolean(recFoodLink2) ? 'd-flex' : 'd-none'&quot;>
+                                    <b-col align-self=&quot;center&quot;>
+                                        <a :href=&quot;recFoodLink2Http&quot; target=&quot;_blank&quot; v-if=&quot;recFoodLink2&quot;>More about your pet's food online</a>
+                                    </b-col>
+                                    <b-col>
+                                        <div id=&quot;recFoodQRCode2&quot; class=&quot;p-2&quot;>
+
+                                        </div>
+                                    </b-col>
+                                </b-row>
+                            </b-col>
+                        </b-row>
+                        <h3 v-if=&quot;recTreat&quot;>Recommended Treats</h3>
+                        <b-row :class=&quot;Boolean(recTreat) ? 'd-flex mb-4' : 'd-none mb-4'&quot;>
+                            <b-col>
+                                <div>
+                                    Treat: {{recTreat}}<br />
+                                    <span v-if=&quot;recTreatAmount&quot;>Amount: {{recTreatAmount}}<br /></span>
+                                    <span v-if=&quot;recTreatFreq&quot;>Frequency: {{recTreatFreq}}</span>
+                                </div>
+                                <b-row :class=&quot;Boolean(recTreatLink) ? 'd-flex' : 'd-none'&quot;>
+                                    <b-col align-self=&quot;center&quot;>
+                                        <a :href=&quot;recTreatLinkHttp&quot; target=&quot;_blank&quot; v-if=&quot;recTreatLink&quot;>More about your pet's treat online</a>
+                                    </b-col>
+                                    <b-col>
+                                        <div id=&quot;recTreatQRCode&quot; class=&quot;p-2&quot;>
+
+                                        </div>
+                                    </b-col>
+                                </b-row>
+                            </b-col>
+                            <b-col :class=&quot;(Boolean(showRecTreat2) &amp;&amp; Boolean(recTreat2)) ? 'd-block' : 'd-none'&quot;>
+                                <div>
+                                    Treat: {{recTreat2}}<br />
+                                    <span v-if=&quot;recTreatAmount2&quot;>Amount: {{recTreatAmount2}}<br /></span>
+                                    <span v-if=&quot;recTreatFreq2&quot;>Frequency: {{recTreatFreq2}}</span>
+                                </div>
+                                <b-row :class=&quot;Boolean(recTreatLink2) ? 'd-flex' : 'd-none'&quot;>
+                                    <b-col align-self=&quot;center&quot;>
+                                        <a :href=&quot;recTreatLink2Http&quot; target=&quot;_blank&quot; v-if=&quot;recTreatLink2&quot;>More about your pet's treat online</a>
+                                    </b-col>
+                                    <b-col>
+                                        <div id=&quot;recTreatQRCode2&quot; class=&quot;p-2&quot;>
+
+                                        </div>
+                                    </b-col>
+                                </b-row>
+                            </b-col>
+                        </b-row>
+                        <h3 v-if=&quot;recommendedNutritionNotes&quot;>Additional Nutrition Notes</h3>
+                        <b-row class=&quot;mb-4&quot; v-if=&quot;recommendedNutritionNotes&quot;>
+                            <b-col>
+                                {{recommendedNutritionNotes}}
+                            </b-col>
+                        </b-row>
+
+                        <b-row>
+                            <b-col :class=&quot;Boolean(isOverweight) ? 'd-block' : 'd-none'&quot;>
+                                <h3>Next Weigh-In</h3>
+                                <b-row>
+                                    <b-col cols=&quot;auto&quot;>
+                                        <p>
+                                            Date: {{reweighDate.toLocaleDateString()}}
+                                        </p>
+                                    </b-col>
+                                    <b-col cols=&quot;auto&quot;>
+                                        <div style=&quot;text-align:center;&quot; :class=&quot;Boolean(practiceBooking) ? 'd-block' : 'd-none'&quot;>
+                                            <a :href=&quot;practiceBookingHttp&quot; target=&quot;_blank&quot;>Book Online</a>
+                                            <div id=&quot;practiceBookingQRCode&quot; class=&quot;p-2&quot;>
+
+                                            </div>
+                                        </div>
+                                    </b-col>
+                                </b-row>
+                            </b-col>
+                        </b-row>
+                        <br v-if=&quot;Boolean(vetName) || Boolean(practiceEmail) || Boolean(practicePhone) || Boolean(practiceWebsite)&quot; />
+                        <b-row v-if=&quot;Boolean(vetName) || Boolean(practiceEmail) || Boolean(practicePhone) || Boolean(practiceWebsite)&quot;>
+                            <b-col>
+                                <h3><span v-if=&quot;petsName&quot;>{{petsName}}'s </span>Veterinary Team Member</h3>
+                                <b-row>
+                                    <b-col>
+                                        <span v-if=&quot;vetName&quot;>Name: {{vetName}}{{vetDesignation}}<br /></span>
+                                        <span v-if=&quot;practiceEmail&quot;>Email: <b-link :href=&quot;('mailto:' + practiceEmail)&quot;>{{practiceEmail}}</b-link></span>
+                                    </b-col>
+                                    <b-col>
+                                        <span v-if=&quot;practicePhone&quot;>Phone: {{practicePhone}}<br /></span>
+                                        <span v-if=&quot;practiceWebsite&quot;>Website: <a :href=&quot;practiceWebsite ? getLinkWithHttps(practiceWebsite) : ''&quot; target=&quot;_blank&quot;>{{practiceWebsite}}</a></span>
+                                    </b-col>
+                                </b-row>
+                            </b-col>
+                        </b-row>
+                    </b-card>
+                    <b-row>
+                        <b-col style=&quot;text-align:left;&quot; class=&quot;mt-4&quot;>
+                            <b-button size=&quot;lg&quot; @click=&quot;tabIndex--&quot;>&amp;lt;- Back</b-button>
+                        </b-col>
+                        <b-col style=&quot;text-align:right;&quot; class=&quot;mt-4&quot;>
+                            <b-button size=&quot;lg&quot; @click=&quot;tabIndex++&quot;>Next -&amp;gt;</b-button>
+                        </b-col>
+                    </b-row>
+                </b-tab>
+
+                <b-tab title=&quot;Weight Loss Plan&quot; v-if=&quot;isOverweight &amp;&amp; Boolean(currentWeight) &amp;&amp; Boolean(species)&quot;>
+                    <b-row>
+                        <b-col style=&quot;text-align:left;&quot; class=&quot;mt-4&quot;>
+                            <b-button size=&quot;lg&quot; @click=&quot;tabIndex--&quot;>&amp;lt;- Back</b-button>
+                        </b-col>
+                        <b-col style=&quot;text-align:right;&quot; class=&quot;mt-4&quot;>
+                            <b-button size=&quot;lg&quot; @click=&quot;tabIndex++&quot;>Next -&amp;gt;</b-button>
+                        </b-col>
+                    </b-row>
+                    <b-card id=&quot;cardWeightLossPlan&quot; style=&quot;max-width:850px; margin-right:auto; margin-left:auto;&quot;>
+                        <b-row>
+                            <b-col v-if=&quot;savedImage&quot; cols=&quot;auto&quot; align-self=&quot;center&quot;>
+                                <b-img v-if=&quot;savedImage&quot; :src=&quot;savedImage&quot; style=&quot;max-width:100px;&quot;></b-img>
+                            </b-col>
+                            <b-col>
+                                <h2><span v-if=&quot;petsName&quot;>{{petsName}}'s </span>Weight Loss Plan</h2>
+                                <div>
+                                    Generated for you by your veterinarian in conjunction with Nutrition Guidelines from the AAHA
+                                </div>
+                            </b-col>
+                        </b-row>
+                        <br />
+                        <br />
+
+                        <b-row>
+                            <b-col cols=&quot;auto&quot;>
+                                <p>
+                                    Plan Start Date: {{planStartDate.toLocaleDateString()}}<br />
+                                    <span v-if=&quot;currentWeight&quot;>Current Weight: {{currentWeight}} lbs<br /></span>
+                                    <span v-if=&quot;idealWeight&quot;>Goal Weight: {{idealWeight}} lbs<br /></span>
+                                    Next Weigh-In: {{reweighDate.toLocaleDateString()}}
+
+                                </p>
+                            </b-col>
+                            <b-col cols=&quot;auto&quot;>
+                                <p>
+                                    Weekly weight loss goal: {{ species === 'Dog' ? '1-2%/week' : '0.5-2%/week'}} {{species === 'Dog' ? ((Math.round(currentWeight*.01*10)/10).toString() + '-' + (Math.round(currentWeight*.02*10)/10).toString()) : ((Math.round(currentWeight*.005*10)/10).toString() + '-' + (Math.round(currentWeight*.02*10)/10).toString())}} lbs/week<br />
+                                    Total weight loss goal for first 12 weeks: {{species === 'Dog' ? ((Math.round(currentWeight*.01*12*10)/10).toString() + '-' + (Math.round(currentWeight*.02*12*10)/10).toString()) : ((Math.round(currentWeight*.005*12*10)/10).toString() + '-' + (Math.round(currentWeight*.02*12*10)/10).toString())}} lbs
+                                </p>
+                            </b-col>
+                        </b-row>
+                        <b-row>
+                            <b-col>
+                                <b-table-simple id=&quot;weight-loss-plan-table&quot;>
+                                    <b-thead>
+                                        <b-tr>
+                                            <b-th>Date</b-th>
+                                            <b-th>Description</b-th>
+                                            <b-th>Method</b-th>
+                                        </b-tr>
+                                    </b-thead>
+                                    <b-tbody>
+                                        <b-tr>
+                                            <b-td>{{planStartDate.toLocaleDateString()}}</b-td>
+                                            <b-td>Created a nutritional and weight loss plan. Current weight/ideal weight/MCS/BCS.</b-td>
+                                            <b-td>Physical exam</b-td>
+                                        </b-tr>
+                                        <b-tr>
+                                            <b-td>{{getPlanStartPlusDays(3)}}</b-td>
+                                            <b-td>Our technicians will reach out to see if you have any questions or have had any trouble getting {{petsName}} to adjust to the new food type and/or amount.</b-td>
+                                            <b-td>Phone or email</b-td>
+                                        </b-tr>
+                                        <b-tr>
+                                            <b-td>{{getPlanStartPlusDays(2*7)}}</b-td>
+                                            <b-td>Reweigh: GOAL WEIGHT {{getGoalWeightRangeAfterWeeks(2)}} lbs</b-td>
+                                            <b-td>Reweigh at home (w/telemedicine checkin) or in-office (w/ tech appointment)</b-td>
+                                        </b-tr>
+                                        <b-tr>
+                                            <b-td>{{getPlanStartPlusDays(4*7)}}</b-td>
+                                            <b-td>Reweigh: GOAL WEIGHT {{getGoalWeightRangeAfterWeeks(4)}} lbs</b-td>
+                                            <b-td>Reweigh at home (w/telemedicine checkin) or in-office (w/ tech appointment)</b-td>
+                                        </b-tr>
+                                        <b-tr>
+                                            <b-td>{{getPlanStartPlusDays(6*7)}}</b-td>
+                                            <b-td>Reweigh: GOAL WEIGHT {{getGoalWeightRangeAfterWeeks(6)}} lbs</b-td>
+                                            <b-td>Reweigh at home (w/telemedicine checkin) or in-office (w/ tech appointment)</b-td>
+                                        </b-tr>
+                                        <b-tr>
+                                            <b-td>{{getPlanStartPlusDays(6*7)}}</b-td>
+                                            <b-td>Reweigh: GOAL WEIGHT {{getGoalWeightRangeAfterWeeks(6)}} lbs</b-td>
+                                            <b-td>Reweigh at home (w/telemedicine checkin) or in-office (w/ tech appointment)</b-td>
+                                        </b-tr>
+                                        <b-tr>
+                                            <b-td>{{getPlanStartPlusDays(8*7)}}</b-td>
+                                            <b-td>Reweigh: GOAL WEIGHT {{getGoalWeightRangeAfterWeeks(8)}} lbs</b-td>
+                                            <b-td>Reweigh at home (w/telemedicine checkin) or in-office (w/ tech appointment)</b-td>
+                                        </b-tr>
+                                        <b-tr>
+                                            <b-td>{{getPlanStartPlusDays(10*7)}}</b-td>
+                                            <b-td>Reweigh: GOAL WEIGHT {{getGoalWeightRangeAfterWeeks(10)}} lbs</b-td>
+                                            <b-td>Reweigh at home (w/telemedicine checkin) or in-office (w/ tech appointment)</b-td>
+                                        </b-tr>
+                                        <b-tr>
+                                            <b-td>{{getPlanStartPlusDays(12*7)}}</b-td>
+                                            <b-td>Reweigh: GOAL WEIGHT {{getGoalWeightRangeAfterWeeks(12)}} lbs</b-td>
+                                            <b-td>Physical exam and Reweigh at veterinary practice, adjust plan for continued success (additional loss vs maintenance)</b-td>
+                                        </b-tr>
+                                    </b-tbody>
+                                </b-table-simple>
+                            </b-col>
+                        </b-row>
+                        <b-row>
+                            <b-col>
+                                <h3>ONCE WEIGHT LOSS IS ACHIEVED</h3>
+                                <ul>
+                                    <li>Celebrate!</li>
+                                    <li>
+                                        If your pet is still losing weight once the ideal body weight is achieved, you and your veterinary team may want to increase your pet's caloric intake by 10% to change from weight loss to weight maintenance.
+                                        Monitor every 2 weeks until stable body weight is achieved, then monitor monthly to make sure your pet's ideal body weight is being maintained, making adjustments if necessary. It may take several monthly recheck exams to determine your pet's appropriate maintenance energy requirements.
+                                    </li>
+                                </ul>
+                            </b-col>
+                        </b-row>
+                    </b-card>
+                    <b-row>
+                        <b-col style=&quot;text-align:left;&quot; class=&quot;mt-4&quot;>
+                            <b-button size=&quot;lg&quot; @click=&quot;tabIndex--&quot;>&amp;lt;- Back</b-button>
+                        </b-col>
+                        <b-col style=&quot;text-align:right;&quot; class=&quot;mt-4&quot;>
+                            <b-button size=&quot;lg&quot; @click=&quot;tabIndex++&quot;>Next -&amp;gt;</b-button>
+                        </b-col>
+                    </b-row>
+                </b-tab>
+
+                <b-tab title=&quot;Print&quot;>
+                    <b-row>
+                        <b-col>
+                            <p style=&quot;text-align:center;&quot;>
+                                <b-button onclick=&quot;GetPrintableForm();&quot; size=&quot;lg&quot;>Print Plan</b-button> &amp;nbsp;
+                                <b-button onclick=&quot;createFullPDF();&quot; size=&quot;lg&quot;>Download PDF</b-button>
+                            </p>
+                        </b-col>
+                    </b-row>
+                    <b-row>
+                        <b-col>
+                            <b-card id=&quot;cardWeightLossPlan&quot; style=&quot;max-width:850px; margin-right:auto; margin-left:auto;&quot;>
+                                <div id=&quot;divPrintPreview&quot; style=&quot;margin: 15px;&quot;></div>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                    <b-row>
+                        <b-col>
+                            <p style=&quot;text-align:center; margin-top:20px;&quot;>
+                                <b-button onclick=&quot;GetPrintableForm();&quot; size=&quot;lg&quot;>Print Plan</b-button> &amp;nbsp;
+                                <b-button onclick=&quot;createFullPDF();&quot; size=&quot;lg&quot;>Download PDF</b-button>
+                            </p>
+                        </b-col>
+                    </b-row>
+                </b-tab>
+            </b-tabs>
+        </b-container>
+    </div>
+    <script>
+        // localStorage persistence
+        const STORAGE_KEY = &quot;AAHA-Nutrition-Guidelines&quot;;
+
+        var recFoodqrc;
+        var recFoodqrc2;
+        var recTreatqrc;
+        var recTreatqrc2;
+        var practiceBookingqrc;
+
+        var nglApp;
+
+        nglApp = new Vue({
+            el: &quot;.appMain&quot;,
+            data() {
+                return {
+                    vetName: localStorage.getItem(STORAGE_KEY + 'vetName'),
+                    vetDesignation: localStorage.getItem(STORAGE_KEY + 'vetDesignation') || ', DVM',
+                    practiceName: localStorage.getItem(STORAGE_KEY + 'practiceName'),
+                    practiceAddress: localStorage.getItem(STORAGE_KEY + 'practiceAddress'),
+                    practicePhone: localStorage.getItem(STORAGE_KEY + 'practicePhone'),
+                    practiceWebsite: localStorage.getItem(STORAGE_KEY + 'practiceWebsite'),
+                    practiceBooking: localStorage.getItem(STORAGE_KEY + 'practiceBooking'),
+                    practiceEmail: localStorage.getItem(STORAGE_KEY + 'practiceEmail'),
+                    savedImage: localStorage.getItem(STORAGE_KEY),
+                    oImageFile: null,
+                    oImageFileObjectURL: null,
+                    todaysDate: new Date(Date.now()),
+                    lifeStageFactorSelected: null,
+                    canineLifeStageFactorOptions: [
+                        { value: null, text: 'Please select a Life Stage Factor' },
+                        { value: { low: 1.4, high: 1.6, text: 'Neutered Adult' }, text: 'Neutered Adult' },
+                        { value: { low: 1.6, high: 1.8, text: 'Intact Adult' }, text: 'Intact Adult' },
+                        { value: { low: 1.0, high: 1.2, text: 'Inactive/Obese Prone' }, text: 'Inactive/Obese Prone' },
+                        { value: { low: 1.0, high: 1.0, text: 'Weight loss' }, text: 'Weight loss' },
+                        { value: { low: 3.0, high: 3.0, text: 'Gestation' }, text: 'Gestation' },
+                        { value: { low: 3.0, high: 6.0, text: 'Lactation' }, text: 'Lactation' },
+                        { value: { low: 3.0, high: 3.0, text: 'Growth: under 4 months' }, text: 'Growth: under 4 months' },
+                        { value: { low: 2.0, high: 2.0, text: 'Growth: over 4 months' }, text: 'Growth: over 4 months' },
+                        { value: { low: 1.6, high: 2.0, text: 'Work: light' }, text: 'Work: light' },
+                        { value: { low: 2.0, high: 5.0, text: 'Work: moderate' }, text: 'Work: moderate' },
+                        { value: { low: 5.0, high: 11.0, text: 'Work: heavy' }, text: 'Work: heavy' }
+                    ],
+                    felineLifeStageFactorOptions: [
+                        { value: null, text: 'Please select a Life Stage Factor' },
+                        { value: { low: 1.2, high: 1.4, text: 'Neutered Adult' }, text: 'Neutered Adult' },
+                        { value: { low: 1.4, high: 1.6, text: 'Intact Adult' }, text: 'Intact Adult' },
+                        { value: { low: 1.0, high: 1.0, text: 'Inactive/Obese Prone' }, text: 'Inactive/Obese Prone' },
+                        { value: { low: 0.8, high: 0.8, text: 'Weight loss' }, text: 'Weight loss' },
+                        { value: { low: 1.6, high: 2.0, text: 'Gestation' }, text: 'Gestation' },
+                        { value: { low: 2.0, high: 6.0, text: 'Lactation' }, text: 'Lactation' },
+                        { value: { low: 2.5, high: 2.5, text: 'Growth' }, text: 'Growth' }
+                    ],
+                    maintenanceEnergyRequirementKcalsSelected: null,
+                    tabIndex: 0,
+                    petsName: null,
+                    species: null,
+                    currentWeight: null,
+                    currentWeightKg: null,
+                    bodyConditionScore: null,
+                    isOverweight: null,
+                    idealWeight: null,
+                    idealWeightKg: null,
+                    reweighDate: new Date(Date.now() + (12 * 7 * 24 * 60 * 60 * 1000)),
+                    planStartDate: new Date(Date.now()),
+                    recFood: null,
+                    recFoodWetDry: null,
+                    recFoodAmount: null,
+                    recFoodAmountUnits: 'Cup(s)',
+                    recFoodFreq: null,
+                    recFoodLink: null,
+                    showRecFood2: false,
+                    recFood2: null,
+                    recFoodWetDry2: null,
+                    recFoodAmount2: null,
+                    recFoodAmountUnits2: 'Cup(s)',
+                    recFoodFreq2: null,
+                    recFoodLink2: null,
+                    recTreat: null,
+                    recTreatAmount: null,
+                    recTreatFreq: null,
+                    recTreatLink: null,
+                    showRecTreat2: false,
+                    recTreat2: null,
+                    recTreatAmount2: null,
+                    recTreatFreq2: null,
+                    recTreatLink2: null,
+                    recommendedNutritionNotes: null
+                }
+            },
+            //watch the savedFeilds variable and save changes in the browser's local storage
+            watch: {
+                savedImage: {
+                    handler(savedImage) {
+                        localStorage.setItem(STORAGE_KEY, savedImage);
+                    },
+                    deep: true
+                },
+                practiceName: {
+                    handler(practiceName) {
+                        localStorage.setItem(STORAGE_KEY + 'practiceName', practiceName);
+                    },
+                    deep: true
+                },
+                practicePhone: {
+                    handler(practicePhone) {
+                        localStorage.setItem(STORAGE_KEY + 'practicePhone', practicePhone);
+                    },
+                    deep: true
+                },
+                practiceWebsite: {
+                    handler(practiceWebsite) {
+                        localStorage.setItem(STORAGE_KEY + 'practiceWebsite', practiceWebsite);
+                    },
+                    deep: true
+                },
+                practiceBooking: {
+                    handler(practiceBooking) {
+                        localStorage.setItem(STORAGE_KEY + 'practiceBooking', practiceBooking);
+                        practiceBookingqrc = loadOrUpdateQRCode(practiceBookingqrc, document.getElementById(&quot;practiceBookingQRCode&quot;), this.practiceBookingHttp);
+                    },
+                    deep: true
+                },
+                practiceEmail: {
+                    handler(practiceEmail) {
+                        localStorage.setItem(STORAGE_KEY + 'practiceEmail', practiceEmail);
+                    },
+                    deep: true
+                },
+                practiceAddress: {
+                    handler(practiceAddress) {
+                        localStorage.setItem(STORAGE_KEY + 'practiceAddress', practiceAddress);
+                    },
+                    deep: true
+                },
+                vetName: {
+                    handler(vetName) {
+                        localStorage.setItem(STORAGE_KEY + 'vetName', vetName);
+                    },
+                    deep: true
+                },
+                vetDesignation: {
+                    handler(vetDesignation) {
+                        localStorage.setItem(STORAGE_KEY + 'vetDesignation', vetDesignation);
+                    },
+                    deep: true
+                },
+                recFoodLink: {
+                    handler(recFoodLink) {
+                        recFoodqrc = loadOrUpdateQRCode(recFoodqrc, document.getElementById(&quot;recFoodQRCode&quot;), this.getLinkWithHttps(recFoodLink));
+                    }
+                },
+                recFoodLink2: {
+                    handler(recFoodLink2) {
+                        recFoodqrc2 = loadOrUpdateQRCode(recFoodqrc2, document.getElementById(&quot;recFoodQRCode2&quot;), this.getLinkWithHttps(recFoodLink2));
+                    }
+                },
+                recTreatLink: {
+                    handler(recTreatLink) {
+                        recTreatqrc = loadOrUpdateQRCode(recTreatqrc, document.getElementById(&quot;recTreatQRCode&quot;), this.getLinkWithHttps(recTreatLink));
+                    }
+                },
+                recTreatLink2: {
+                    handler(recTreatLink2) {
+                        recTreatqrc2 = loadOrUpdateQRCode(recTreatqrc2, document.getElementById(&quot;recTreatQRCode2&quot;), this.getLinkWithHttps(recTreatLink2));
+                    }
+                },
+                lifeStageFactorSelected: {
+                    handler(lifeStageFactorSelected) {
+                        this.maintenanceEnergyRequirementKcalsSelected = this.mainenanceEnergyRequirementAvg;
+                    }
+                },
+                bodyConditionScore: {
+                    handler(bodyConditionScore) {
+                        if (bodyConditionScore >= 6) {
+                            this.isOverweight = true;
+                        }
+                        else {
+                            this.isOverweight = &quot;&quot;;
+                        }
+
+                    }
+                },
+                tabIndex: {
+                    handler(tabIndex) {
+                        if (tabIndex === 2 || tabIndex === 3) {
+                            populatePrintPreview();
+                        }
+                    }
+                }
+            },
+            methods: {
+                resizeAndStoreImageInLocalStorage(e) {
+                    const imageFile = e.target.files[0];
+                    this.oImageFileObjectURL = URL.createObjectURL(imageFile);
+                    convertImageToBase64Async(this.oImageFileObjectURL).then(
+                        value => {
+                            this.savedImage = value;
+                        }
+                    );
+                },
+                getGoalWeightRangeAfterWeeks(numOfWeeks) {
+                    return (this.species === 'Dog' ? ((Math.round((this.currentWeight - this.currentWeight * .02 * numOfWeeks) * 10) / 10).toString() + '-' + (Math.round((this.currentWeight - this.currentWeight * .01 * numOfWeeks) * 10) / 10).toString()) : ((Math.round((this.currentWeight - this.currentWeight * .02 * numOfWeeks) * 10) / 10).toString() + '-' + (Math.round((this.currentWeight - this.currentWeight * .005 * numOfWeeks) * 10) / 10).toString()))
+                },
+                getPlanStartPlusDays(plusDays) {
+                    return (new Date(this.planStartDate.valueOf() + plusDays * 24 * 60 * 60 * 1000).toLocaleDateString());
+                },
+                getLinkWithHttps(theLink) {
+                    if (theLink) {
+                        if (theLink.indexOf('http') != 0) {
+                            return 'https://' + theLink;
+                        }
+                    }
+                    return theLink;
+                },
+                updateCurrentWeightFromKG(event) {
+                    this.currentWeight = Math.round((this.currentWeightKg * 2.20462262) * 10) / 10;
+                },
+                updateCurrentWeightFromLBS(event) {
+                    this.currentWeightKg = Math.round((this.currentWeight / 2.20462262) * 10) / 10;;
+                },
+                updateIdealWeightFromKG(event) {
+                    this.idealWeight = Math.round((this.idealWeightKg * 2.20462262) * 10) / 10;
+                },
+                updateIdealWeightFromLBS(event) {
+                    this.idealWeightKg = Math.round((this.idealWeight / 2.20462262) * 10) / 10;;
+                }
+            },
+            computed: {
+                recFoodLinkHttp: function () {
+                    return this.getLinkWithHttps(this.recFoodLink)
+                },
+                recFoodLink2Http: function () {
+                    return this.getLinkWithHttps(this.recFoodLink2)
+                },
+                recTreatLinkHttp: function () {
+                    return this.getLinkWithHttps(this.recTreatLink)
+                },
+                recTreatLink2Http: function () {
+                    return this.getLinkWithHttps(this.recTreatLink2)
+                },
+                practiceBookingHttp: function () {
+                    return this.getLinkWithHttps(this.practiceBooking)
+                },
+                restingEnergyRequirement: function () {
+                    if (this.isOverweight) {
+                        return Math.round(Math.pow(this.idealWeightKg, 0.75) * 70)
+                    }
+                    else {
+                        return Math.round(Math.pow(this.currentWeightKg, 0.75) * 70)
+                    }
+                },
+                maintenanceEnergyRequirementLow: function () {
+                    return this.lifeStageFactorSelected ? Math.round(this.restingEnergyRequirement * this.lifeStageFactorSelected.low) : null;
+                },
+                maintenanceEnergyRequirementHigh: function () {
+                    return this.lifeStageFactorSelected ? Math.round(this.restingEnergyRequirement * this.lifeStageFactorSelected.high) : null;
+                },
+                mainenanceEnergyRequirementAvg: function () {
+                    return this.maintenanceEnergyRequirementLow ? (Math.round((this.maintenanceEnergyRequirementLow + this.maintenanceEnergyRequirementHigh) / 2)) : null
+                },
+                maintenanceEnergyRequirementRange: function () {
+                    if (this.maintenanceEnergyRequirementLow &amp;&amp; this.maintenanceEnergyRequirementHigh) {
+                        if (this.maintenanceEnergyRequirementLow === this.maintenanceEnergyRequirementHigh) {
+                            return this.maintenanceEnergyRequirementLow;
+                        }
+                        else {
+                            return this.maintenanceEnergyRequirementLow.toString() + ' to ' + this.maintenanceEnergyRequirementHigh.toString();
+                        }
+                    }
+                    return null;
+                },
+                lifeStageFactorOptions: function () {
+                    if (this.species) {
+                        if (this.species === 'Dog') {
+                            return this.canineLifeStageFactorOptions;
+                        }
+                        else {
+                            return this.felineLifeStageFactorOptions;
+                        }
+                    }
+                    return { value: null, text: 'Please select a species in Pet Information above' };
+                },
+                selectedLifeStageFactorRange: function () {
+                    if (this.lifeStageFactorSelected) {
+                        if (this.lifeStageFactorSelected.low === this.lifeStageFactorSelected.high) {
+                            return this.lifeStageFactorSelected.low
+                        }
+                        else {
+                            return '(' + this.lifeStageFactorSelected.low.toString() + ' to ' + this.lifeStageFactorSelected.high.toString() + ')';
+                        }
+                    }
+                    return null;
+                }
+            }
+        });
+
+
+        async function convertImageToBase64Async(strImageURL) {
+            return new Promise(function (myResolve) {
+                let imageToConvert = new Image();
+                imageToConvert.src = strImageURL;
+                imageToConvert.onload = function () {
+                    /* Creating a Canvas in HTML5 */
+                    var drawCanvas = document.createElement(&quot;canvas&quot;);
+                    const MAX_WIDTH = 200;
+                    const MAX_HEIGHT = 200;
+                    let resizeWidth = imageToConvert.width;
+                    let resizeHeight = imageToConvert.height;
+                    if (resizeWidth > resizeHeight &amp;&amp; resizeWidth > MAX_WIDTH) {
+                        //Get the proportional resized hight
+                        resizeHeight = (resizeHeight * MAX_WIDTH) / resizeWidth;
+                        resizeWidth = MAX_WIDTH;
+                    }
+                    else if (resizeWidth <= resizeHeight &amp;&amp; resizeHeight > MAX_HEIGHT) {
+                        //Get the proportional resized width
+                        resizeWidth = (resizeWidth * MAX_HEIGHT) / resizeHeight;
+                        resizeHeight = MAX_HEIGHT;
+                    }
+                    /* Setting the Canvas width &amp; height as refer to the Image */
+                    drawCanvas.width = resizeWidth; //imageToConvertBase64.width;
+                    drawCanvas.height = resizeHeight; //imageToConvertBase64.height;
+                    /* Copy the image to Canvas */
+                    var copyImageToCanvas = drawCanvas.getContext(&quot;2d&quot;);
+                    copyImageToCanvas.drawImage(imageToConvert, 0, 0, resizeWidth, resizeHeight);
+                    /* Converting Image to Data URL */
+                    myResolve(drawCanvas.toDataURL(&quot;image/png&quot;));
+                }
+            });
+        }
+
+        function loadOrUpdateQRCode(qrVariable, el, url) {
+            if (url &amp;&amp; el) {
+                if (qrVariable) {
+                    qrVariable.clear();
+                    qrVariable.makeCode(url);
+                }
+                else {
+                    qrVariable = new QRCode(el,
+                        {
+                            text: url || '',
+                            width: 75,
+                            height: 75
+                        });
+                }
+            }
+            return qrVariable;
+        }
+
+        window.addEventListener(&quot;load&quot;, function () {
+            practiceBookingqrc = loadOrUpdateQRCode(practiceBookingqrc, document.getElementById(&quot;practiceBookingQRCode&quot;), nglApp.practiceBookingHttp);
+            recFoodqrc = loadOrUpdateQRCode(recFoodqrc, document.getElementById(&quot;recFoodQRCode&quot;), nglApp.recFoodLinkHttp);
+            recFoodqrc2 = loadOrUpdateQRCode(recFoodqrc2, document.getElementById(&quot;recFoodQRCode2&quot;), nglApp.recFoodLink2Http);
+            recTreatqrc = loadOrUpdateQRCode(recTreatqrc, document.getElementById(&quot;recTreatQRCode&quot;), nglApp.recTreatLinkHttp);
+            recTreatqrc2 = loadOrUpdateQRCode(recTreatqrc2, document.getElementById(&quot;recTreatQRCode2&quot;), nglApp.recTreatLink2Http);
+        });
+
+
+        function createFullPDF() {
+            $('#divPrintPreview').css(&quot;font-size&quot;, &quot;.8em&quot;);
+
+            var strFileName = 'Nutrition Prescription';
+
+            if (nglApp.petsName)
+                strFileName = nglApp.petsName + &quot;'s &quot; + strFileName;
+
+            if (nglApp.isOverweight)
+                strFileName = strFileName + ' and Weight Loss Plan';
+
+            $('.plan-page-break').hide();
+            html2pdf()
+                .from(document.getElementById(&quot;divPrintPreview&quot;))
+                .save(strFileName);
+
+            setTimeout(function () { $('#divPrintPreview').css(&quot;font-size&quot;, &quot;&quot;); }, 300);
+        }
+
+        function populatePrintPreview() {
+            var myPrintPreview = document.getElementById(&quot;divPrintPreview&quot;);
+            myPrintPreview.innerHTML = $('#cardNutritionPlan').html();
+            if (nglApp.isOverweight &amp;&amp; nglApp.currentWeight &amp;&amp; nglApp.species) {
+                myPrintPreview.innerHTML += ' <div style=&quot;page-break-after: always;&quot;>&amp;nbsp;</div> ';
+                myPrintPreview.innerHTML += ' <div class=&quot;plan-page-break&quot;>&amp;nbsp;</div> ';
+                myPrintPreview.innerHTML += '<div style=&quot;margin-top:15px;&quot;> ' + $('#cardWeightLossPlan').html() + '</div>';
+            }
+        }
+
+    </script>
+</div></body></html>" width="100%" height="1000" frameborder="0" scrolling="no" style="overflow: hidden; height: 1900px;"></iframe>
